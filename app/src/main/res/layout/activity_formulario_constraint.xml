@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityFormularioConstraint">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/editNome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_nome"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editEndereco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_endereco"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="51dp" />
+
+            <EditText
+                android:id="@+id/editCidade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@android:drawable/ic_dialog_map"
+                android:ems="10"
+                android:hint="@string/hint_cidade"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="105dp" />
+
+            <EditText
+                android:id="@+id/editEmails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@android:drawable/ic_dialog_email"
+                android:ems="10"
+                android:hint="@string/hint_email"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="157dp" />
+
+            <EditText
+                android:id="@+id/editTelefone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@android:drawable/ic_menu_call"
+                android:ems="10"
+                android:hint="@string/hint_telefone"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="218dp" />
+
+            <Spinner
+                android:id="@+id/spinnerEstados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/siglas_estados_brasil"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="282dp" />
+
+            <EditText
+                android:id="@+id/editCep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_cep"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="277dp" />
+
+            <EditText
+                android:id="@+id/editAniversario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableStart="@android:drawable/ic_menu_my_calendar"
+                android:ems="10"
+                android:hint="@string/hint_calendario"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="338dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.414"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="407dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
