@@ -22,10 +22,10 @@ public class ActivityTelaProgramatica extends AppCompatActivity {
         linearLayout.setOrientation(LinearLayout.VERTICAL);
         linearLayout.setGravity(Gravity.CENTER);
 
-        new LinearLayout.LayoutParams(
+        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT
-        );
+        ));
 
         TextView textView = new TextView(this);
         textView.setText("Olá Mundo");
@@ -33,7 +33,6 @@ public class ActivityTelaProgramatica extends AppCompatActivity {
         Button button = new Button(this);
         button.setText("Clique aqui");
 
-        // Define ação de clique para abrir ActivityLinearLayout
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +40,6 @@ public class ActivityTelaProgramatica extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         linearLayout.addView(textView);
         linearLayout.addView(button);

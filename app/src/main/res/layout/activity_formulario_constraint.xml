@@ -33,9 +33,9 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_endereco"
                 android:inputType="text"
-                app:layout_constraintTop_toBottomOf="@id/editNome"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@+id/editNome" />
 
             <EditText
                 android:id="@+id/editCidade"
@@ -44,9 +44,9 @@
                 android:drawableStart="@android:drawable/ic_dialog_map"
                 android:hint="@string/hint_cidade"
                 android:inputType="text"
-                app:layout_constraintTop_toBottomOf="@id/editEndereco"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@+id/editEndereco" />
 
             <EditText
                 android:id="@+id/editEmails"
