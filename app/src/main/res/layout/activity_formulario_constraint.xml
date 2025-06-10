@@ -33,8 +33,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_endereco"
                 android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/editNome"
+                app:layout_constraintStart_toStartOf="@id/editNome"
                 app:layout_constraintTop_toBottomOf="@+id/editNome" />
 
             <EditText
@@ -44,8 +44,8 @@
                 android:drawableStart="@android:drawable/ic_dialog_map"
                 android:hint="@string/hint_cidade"
                 android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/editEndereco"
+                app:layout_constraintStart_toStartOf="@id/editEndereco"
                 app:layout_constraintTop_toBottomOf="@+id/editEndereco" />
 
             <EditText
@@ -55,9 +55,9 @@
                 android:drawableStart="@android:drawable/ic_dialog_email"
                 android:hint="@string/hint_email"
                 android:inputType="text"
-                app:layout_constraintTop_toBottomOf="@id/editCidade"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="@id/editCidade"
+                app:layout_constraintStart_toStartOf="@id/editCidade"
+                app:layout_constraintTop_toBottomOf="@id/editCidade" />
 
             <EditText
                 android:id="@+id/editTelefone"
@@ -66,9 +66,9 @@
                 android:drawableStart="@android:drawable/ic_menu_call"
                 android:hint="@string/hint_telefone"
                 android:inputType="text"
-                app:layout_constraintTop_toBottomOf="@id/editEmails"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="@id/editEmails"
+                app:layout_constraintStart_toStartOf="@id/editEmails"
+                app:layout_constraintTop_toBottomOf="@id/editEmails" />
 
             <Spinner
                 android:id="@+id/spinnerEstados"
@@ -76,10 +76,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:entries="@array/siglas_estados_brasil"
-                app:layout_constraintTop_toBottomOf="@id/editTelefone"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/editCep"
-                app:layout_constraintHorizontal_weight="1"/>
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="@id/editTelefone"
+                app:layout_constraintTop_toBottomOf="@id/editTelefone" />
 
             <EditText
                 android:id="@+id/editCep"
@@ -88,32 +88,32 @@
                 android:layout_marginTop="16dp"
                 android:hint="@string/hint_cep"
                 android:inputType="text"
-                app:layout_constraintTop_toBottomOf="@id/editTelefone"
+                app:layout_constraintEnd_toEndOf="@id/editTelefone"
+                app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toEndOf="@id/spinnerEstados"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="1"/>
+                app:layout_constraintTop_toBottomOf="@id/editTelefone" />
 
             <EditText
                 android:id="@+id/editAniversario"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="28dp"
                 android:drawableStart="@android:drawable/ic_menu_my_calendar"
                 android:hint="@string/hint_calendario"
                 android:inputType="text"
-                app:layout_constraintTop_toBottomOf="@id/spinnerEstados"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/spinnerEstados" />
 
             <ImageButton
                 android:id="@+id/imageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                app:srcCompat="@android:drawable/btn_star_big_on"
+                app:layout_constraintEnd_toEndOf="@id/editAniversario"
+                app:layout_constraintStart_toStartOf="@id/editAniversario"
                 app:layout_constraintTop_toBottomOf="@id/editAniversario"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:srcCompat="@android:drawable/btn_star_big_on" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
