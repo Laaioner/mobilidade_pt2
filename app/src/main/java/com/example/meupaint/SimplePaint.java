@@ -1,4 +1,3 @@
-// Atualize SimplePaint.java para suportar modos de desenho
 package com.example.meupaint;
 
 import android.content.Context;
