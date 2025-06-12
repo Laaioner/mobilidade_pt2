@@ -1,9 +1,13 @@
 package com.example.laucher;
 
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.media.tv.interactive.AppLinkInfo;
 import android.os.Bundle;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -18,30 +22,34 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
     PackageManager pm;
-
     ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        listView = findViewById(R.id.listView);
-
         pm=getPackageManager();
-        List<ApplicationInfo> applicationInfos= pm.getInstalledApplications(PackageManager.MATCH_ALL);
+        List<ApplicationInfo> applicationInfos= new ArrayList<>();
 
+        //outraabordagem
+        Intent i = new Intent( Intent.ACTION_MAIN);
+        i.addCategory(Intent.CATEGORY_LAUNCHER);
 
-        AppAdapter adapter = new AppAdapter(this, R.layout.item_app, applicationInfos);
-        List<ApplicationInfo> appsFiltrados=new ArrayList<>();
-        for (ApplicationInfo app: applicationInfos){
-            if((app.flags & ApplicationInfo.FLAG_SYSTEM)==0){
-                appsFiltrados.add(app);
-            }
-        }
-
+        List< ResolveInfo> resolveInfosList = pm.queryIntentActivities(i,0);
+        applicationInfos.clear();
+        resolveInfosList.forEach(resolveInfo -> {
+            applicationInfos.add(resolveInfo.activityInfo.applicationInfo);
+        });
+        AppAdapter adapter = new AppAdapter( this, R.layout.item_app,applicationInfos);
         listView.setAdapter(adapter);
 
+        listView.setOnClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
+                ApplicationInfo app = (ApplicationInfo) adapterView.getItemAtPosition(i);
+                Intent laucherIntent = pm.getLaunchIntentForPackage(app.packageName);
+                startActivity(laucherIntent);
+            }
+        });
     }
 }
