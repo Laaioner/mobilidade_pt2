@@ -23,14 +23,14 @@ public class SimplePaint extends View {
         RECTANGLE
     }
 
-    private Mode currentMode = Mode.FREE_DRAW;
+    Mode currentMode = Mode.FREE_DRAW;
 
     List<Paint> mPaintList;
     List<Path> mPathList;
-    private Paint currentPaint;
-    private Path currentPath;
+     Paint currentPaint;
+     Path currentPath;
     ColorDrawable currentColor;
-    private float startX, startY;
+    float startX, startY;
 
     public SimplePaint(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
